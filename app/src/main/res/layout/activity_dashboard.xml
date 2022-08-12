@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Dashboard"
     android:background="@drawable/screenbackground"
+    tools:openDrawer="start"
+    android:id="@+id/drawer"
     >
-
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            app:title="Navigation Drawer"
+            app:titleTextColor="@color/white"
+            app:popupTheme="@style/MyToolbarStyle"
+            android:background="@color/black"/>
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navmenu"
+        android:background="#3F5A9E"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/menu"
+        app:headerLayout="@layout/navheader"
+        android:layout_gravity="start"
+        />
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
@@ -25,8 +51,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints" />
-
         <ImageView
+            android:id="@+id/shownavdrawer"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
@@ -35,44 +61,185 @@
             android:src="@drawable/showdrawer"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="40dp" />
+            tools:layout_editor_absoluteY="40dp"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/currentstatus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="290dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="-70dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" >
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:id="@+id/statusmessage"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:layout_marginEnd="111dp"
+            app:cardBackgroundColor="#53B6FA"
             app:cardCornerRadius="10dp"
-            app:cardBackgroundColor="#7AC6FA">
+            >
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/statusimage"
                     android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:src="@color/black"/>
-            <TextView
-                android:layout_width="250dp"
-                android:layout_height="30dp"
-                android:textSize="20dp"
-                android:text="NO LIGHTNING"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/black"
-                />
+                    android:layout_height="48dp"
+                    android:src="@drawable/safehai"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="fitXY"/>
+                <TextView
+                    android:id="@+id/statustext"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:text="No Lightning Alerts"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    style="bold"
+                    android:textSize="20dp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/runtimechanges"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="    "
+            android:layout_toRightOf="@id/updated"
+            android:layout_below="@id/statusmessage"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/statusmessage"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/line" />
+
+        <ImageView
+            android:id="@+id/meter"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/statusmessage"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/meter" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statusmessage"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/meter"
+            android:text="Warning:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/severe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statusmessage"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/warning"
+            android:text="None"
+            android:textColor="#F63434"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/statusmessage"
+            android:layout_marginLeft="51dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/clock" />
+
+        <TextView
+            android:id="@+id/reported"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/warning"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/meter"
+            android:text="Reported :Just Now"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/statusmessage"
+            android:layout_marginLeft="51dp"
+            android:layout_marginTop="145dp"
+            android:src="@drawable/clock" />
+        <TextView
+            android:id="@+id/updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reported"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/meter"
+            android:text="Updated : Just Now"
+            android:textStyle="bold" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imformedmessage"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginEnd="111dp"
+            app:cardBackgroundColor="#53B6FA"
+            app:cardCornerRadius="10dp"
+            android:layout_below="@+id/updated"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            >
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+
+                >
+
+                <ImageView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/informed"
+                    android:scaleType="fitXY"/>
+                <TextView
+                    android:id="@+id/informed"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Authorities Informed"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+
+                    style="bold"
+                    android:textSize="20dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="-8dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
@@ -132,13 +299,14 @@
             android:gravity="center"
             android:text="   "
             android:textColor="#000000" />
+
         <TextView
             android:id="@+id/chats"
             android:layout_width="40dp"
             android:layout_height="20dp"
+            android:layout_alignLeft="@+id/homescreen"
             android:layout_alignTop="@+id/appbar"
             android:layout_alignBottom="@+id/appbar"
-            android:layout_alignLeft="@+id/homescreen"
             android:layout_marginStart="79dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="25dp"
@@ -163,5 +331,5 @@
             android:text="   "
             android:textColor="#000000" />
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

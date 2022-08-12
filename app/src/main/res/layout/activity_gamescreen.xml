@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gamescreen"
+    android:layout_marginTop="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#53B6FA"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Precaution Section"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/openquiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/quiz" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#53B6FA"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text="Quiz"
+                android:textColor="@color/white"
+                android:layout_marginTop="-5dp"
+                android:textSize="24dp" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/heatwave1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-8dp"
+            android:src="@drawable/heatwave" />
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardBackgroundColor="#53B6FA"-->
+<!--            android:layout_marginHorizontal="40dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            tools:ignore="MissingConstraints">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="30dp"-->
+<!--                android:text="Heatwave illustration"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="24dp" />-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+        <ImageView
+            android:id="@+id/lightning1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/lightning" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#53B6FA"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Illustrations"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/playgame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#53B6FA"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Play game"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginBottom="-8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/appbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/hamburgericon1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/appbar"
+            android:layout_alignBottom="@+id/appbar"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="    "
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/launchgamescreen1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/hamburgericon1"
+            android:layout_alignTop="@+id/appbar"
+            android:layout_alignBottom="@+id/appbar"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="   "
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/homescreen1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/launchgamescreen1"
+            android:layout_alignTop="@+id/appbar"
+            android:layout_alignBottom="@+id/appbar"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="   "
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/chats1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/homescreen1"
+            android:layout_alignTop="@+id/appbar"
+            android:layout_alignBottom="@+id/appbar"
+            android:layout_marginStart="79dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="   "
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/addlocation1"
+            android:layout_width="40dp"
+            android:layout_height="10dp"
+            android:layout_alignLeft="@+id/chats1"
+            android:layout_alignTop="@+id/appbar"
+            android:layout_alignBottom="@+id/appbar"
+            android:layout_marginStart="92dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="45dp"
+            android:gravity="center"
+            android:text="   "
+            android:textColor="#000000" />
+    </RelativeLayout>
+<!--    </ScrollView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

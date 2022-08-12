@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     myservice client;
     String answer;
-
+    Button getmessage;
 
     public static String input;
     @Override
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         signuptext=findViewById(R.id.signuptext);
         login=findViewById(R.id.loginbutton);
 
+
         signuptext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +69,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void getalert() {
+        client = retrofitclient.getInstance().create(myservice.class);
+        client.sendalert("7011768133").enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d("sendalert", "onResponse:"+response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public static String getauthtoken(){
+        return input;
     }
 
     public void loginuser(String email, String password) {

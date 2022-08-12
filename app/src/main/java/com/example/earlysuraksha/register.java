@@ -21,10 +21,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class register extends AppCompatActivity {
-    EditText signupemail,signuppassword,username;
+    EditText signupemail,signuppassword,username,phonenumber;
     TextView logintext;
     Button signup;
-    String emailsignup,passwordsignup,name;
+    String emailsignup,passwordsignup,name,phnnumber;
     myservice client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,8 @@ public class register extends AppCompatActivity {
         logintext=findViewById(R.id.logintext);
         signup=findViewById(R.id.signupbutton);
         username=findViewById(R.id.username);
+        phonenumber=findViewById(R.id.phonenumber);
+
         logintext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +51,7 @@ public class register extends AppCompatActivity {
                 emailsignup=signupemail.getText().toString();
                 passwordsignup=signuppassword.getText().toString();
                 name=username.getText().toString();
+                phnnumber=phonenumber.getText().toString();
                 if(emailsignup.equals(" ")){
                     Toast.makeText(register.this, "Enter a valid email id !!", Toast.LENGTH_SHORT).show();
                     return;
@@ -61,15 +64,15 @@ public class register extends AppCompatActivity {
                     Toast.makeText(register.this, "Enter your name !!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                registeruser(emailsignup,passwordsignup,name);
+                registeruser(emailsignup,passwordsignup,name,phnnumber);
             }
         });
 
     }
 
-    public void registeruser(String emailsignup, String passwordsignup, String name) {
+    public void registeruser(String emailsignup, String passwordsignup, String name,String phonenumber) {
         client= retrofitclient.getInstance().create(myservice.class);
-        client.registerUser(emailsignup,name,passwordsignup).enqueue(new Callback<JsonObject>() {
+        client.registerUser(emailsignup,name,passwordsignup,phonenumber).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 String answer = new Gson().toJson(response.body());
