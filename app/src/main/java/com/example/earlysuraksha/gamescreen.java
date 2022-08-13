@@ -1,9 +1,11 @@
 package com.example.earlysuraksha;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +42,7 @@ public class gamescreen extends AppCompatActivity {
             }
         });
         openhomescreen.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),Dashboard.class);

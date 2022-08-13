@@ -336,7 +336,6 @@ public class Dashboard extends AppCompatActivity  {
                 Log.d("resbody", "onResponse: "+answer+"\n" +answer.length());
 
                 if(answer.length()>100){
-
                     Toast.makeText(Dashboard.this, "New user created", Toast.LENGTH_SHORT).show();
                 }
             }
