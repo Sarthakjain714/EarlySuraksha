@@ -13,24 +13,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class retrofitclient {
     private static Retrofit instance;
 
-    public static Retrofit getInstance(){
-        if(instance==null){
+    public static Retrofit getInstance() {
+        if (instance == null) {
             OkHttpClient.Builder client = new OkHttpClient.Builder();
             client.connectTimeout(30, TimeUnit.SECONDS);
             client.readTimeout(30, TimeUnit.SECONDS);
             client.writeTimeout(30, TimeUnit.SECONDS);
             Gson gson = new GsonBuilder().create();
-            instance= new Retrofit.Builder()
+            instance = new Retrofit.Builder()
                     .baseUrl("https://earlysuraksha.herokuapp.com/api/")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(client.build())
                     .build();
-            }
+        }
         return instance;
     }
 
-    myservice apiset(){
+    myservice apiset() {
         return instance.create(myservice.class);
     }
 }
