@@ -1,16 +1,5 @@
 package com.example.earlysuraksha;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Switch;
-
-//import com.google.android.gms.auth.api.phone.SmsRetriever;
-//import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
-import com.google.android.gms.common.api.CommonStatusCodes;
-import com.google.android.gms.common.api.Status;
-
 //public class SmsBroadcastReceiver extends BroadcastReceiver {
 //    @Override
 //    public void onReceive(Context context, Intent intent) {
