@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/profile"
+    <item android:id="@+id/profile"
         android:icon="@drawable/person"
-        android:title="Profile" />
-    <item
-        android:id="@+id/home"
+        android:title="Profile"/>
+    <item android:id="@+id/home"
         android:icon="@drawable/ic_outline_home_24"
-        android:title="Home" />
-    <item
-        android:id="@+id/disastermanagementkit"
+        android:title="Home"
+        />
+    <item android:id="@+id/disastermanagementkit"
         android:icon="@drawable/ic_baseline_medical_services_24"
-        android:title="Disaster Emergency Kit" />
-    <item
-        android:id="@+id/precautionarygames"
+        android:title="Disaster Emergency Kit"/>
+    <item android:id="@+id/precautionarygames"
         android:icon="@drawable/ic_baseline_games_24"
-        android:title="Precautionary games" />
-    <item
-        android:id="@+id/helplinenumber"
+        android:title="Precautionary games"/>
+    <item android:id="@+id/helplinenumber"
         android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
-        android:title="Helpline Number" />
-    <item
-        android:id="@+id/logout"
+        android:title="Helpline Number"/>
+    <item android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_login_24"
-        android:title="Sign out" />
+        android:title="Sign out"/>
 
 </menu>
